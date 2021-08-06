@@ -62,10 +62,10 @@ set.seed(123)
 # Variar de 1
 
 #### ORIGINAL
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.9, 0.4)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 #######################################################
@@ -80,10 +80,10 @@ lagsList<-seq(1,5,1)
 #######################################################
 #######################################################
 # TEST 1. NU
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.2, 0.05)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 # Se normalizan los datos en valores 0 - 1
@@ -136,10 +136,10 @@ head(mejoresModelos0)
 #######s cambia la wea pal wacho 1 ####################
 
 # TEST 1. NU
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.2, 0.05)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 # Se normalizan los datos en valores 0 - 1
@@ -209,10 +209,10 @@ set.seed(123)
 # Variar de 1
 
 #### ORIGINAL
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.9, 0.4)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 #######################################################
@@ -227,10 +227,10 @@ lagsList<-seq(1,5,1)
 #######################################################
 #######################################################
 # TEST 1. NU
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.2, 0.05)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 # Se normalizan los datos en valores 0 - 1
@@ -283,10 +283,10 @@ head(mejoresModelos2)
 #######s cambia la wea pal wacho 2 ####################
 
 # TEST 1. NU
-registerDoParallel(cores = 6)
-cost <- 2^seq(-4, 12, 2)
-nu <- seq(0.1, 0.2, 0.05)
-gamma<-2^seq(-4, 12, 2)
+registerDoParallel(cores = 8)
+cost <- 2^seq(-4, 8, 1)
+nu <- seq(0.05, 0.9, 0.05)
+gamma<-2^seq(-4, 8, 1)
 lagsList<-seq(1,5,1)
 
 # Se normalizan los datos en valores 0 - 1
@@ -369,7 +369,7 @@ for (i in 1:6){
   stepResponse <- predict(mejorModelo, x )
   plot(stepTime,retDatos$PAMn,type="l", col="red")
   lines(stepTime,stepResponse, col = "blue")
-  legend("topright", c("Escalon de presión", "respuesta al escalon"), title = "autorregulacion", pch = 1, col=c("red","blue"),lty=c(1,1),inset = 0.01)
+  legend("topright", c("Escalon de presi?n", "respuesta al escalon"), title = "autorregulacion", pch = 1, col=c("red","blue"),lty=c(1,1),inset = 0.01)
   print(paste("corr=",mejoresModelos[i,5]))
   readline(prompt="Press [enter] to continue")
 }
